@@ -25,10 +25,10 @@
 })();
 
 $(function () {
-    
+
     /* BASE URL VIA DEVICE PIXEL RATIO - ANDROID */
-    var baseUrl = 'file:///android_asset/www/img-js-diff/ratiores/'+getDensityDirectoryName()+'/'
-    document.write('<base href="'+baseUrl+'">');
+    //var baseUrl = 'file:///android_asset/www/img-js-diff/ratiores/'+getDensityDirectoryName()+'/'
+    //document.write('<base href="' + baseUrl + '">');
 });
 
 /* MUDA DIRETORIO DAS IMAGENS E CONTEUDO 
@@ -76,5 +76,7 @@ function updateOrientation(){
 			contentType = "vertical";  
 		break;  
 	}	
-	document.getElementsByTagName('body')[0].className = contentType;	
+    
+	document.getElementsByTagName('body')[0].className = contentType;
+	document.getElementById('content-type').innerHTML = contentType;
 } 

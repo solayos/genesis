@@ -3,22 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <title>Site</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <meta name="revisit-after" content="14 days" />
+
+    <!-- CACHE -->
+    <meta name="revisit-after" content="14 days" />    <meta name="robots" content="all" />     <meta name="googlebot" content="noarchive" />    <meta http-equiv="cache-control" content="no-store" /><!-- HTTP 1.1 - public | private | no-cache | no-store -->    <!--<meta http-equiv="pragma" content="no-store" />--><!-- HTTP 1.0 - public | private | no-cache | no-store -->
+
     <!-- MOBILE VIEWPORT OPTIMIZATION -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="HandheldFriendly" content="true" /><!-- feature phone (PALM/Blackberry) -->
     <meta name="MobileOptimized" content="320" /><!-- MS feature phone -->
 
+    <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
+    <link href="http://www.site.com.br/" rel="canonical" />
     <!--<base href="http://www.site.com.br/" />--><!-- usada quando o site está em produção, para garantia de urls relativas -->
     
-    <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
-    <link rel="canonical" href="http://www.site.com.br/" />
-    
     <!-- GOOGLE PLUS -->
-    <link rel="publisher" href="//plus.google.com/+site/"/>
+    <link href="//plus.google.com/+site/" rel="publisher" />
 
     <!-- FACEBOOK TAGS -->
     <meta property="og:locale" content="pt_BR" />
@@ -27,7 +29,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Site" />
     <meta property="og:url" content="http://www.site.com.br" />
-    <meta property="og:image" content="http://www.site.com.br/images/site.jpg" />
+    <meta property="og:image" content="images/site.jpg" />
 	
     <meta property="article:publisher" content="http://facebook.com/site" />
     <meta property="article:section" content="Nome da seção" />
@@ -41,35 +43,40 @@
     <meta name="twitter:site" content="@site" />
     <meta name="twitter:domain" content="Site" />
     <meta name="twitter:creator" content="@site" />
-    <meta name="twitter:image" content="http://www.site.com.br/images/site.jpg" /><!-- img normal -->
-    <meta name="twitter:image:src" content="http://www.site.com.br/images/site-grande.jpg" /><!-- img grande -->
+    <meta name="twitter:image" content="images/site.jpg" /><!-- img normal -->
+    <meta name="twitter:image:src" content="images/site-grande.jpg" /><!-- img grande -->
 
-    <!-- APPLE TOUCH ICON -->
-    <link rel="apple-touch-icon" sizes="152x152" href="//site.com.br/images/apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="//site.com.br/images/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="//site.com.br/images/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="//site.com.br/images/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="//site.com.br/images/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="//site.com.br/images/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" href="//site.com.br/images/apple-touch-icon.png" />
+    <!-- APPLE TOUCH ICON 
+        *-- Older versions of Safari will not add effects for icon with the -precomposed.png suffix
+        *-- Older iOS versions download the smallest icon instead of the largest one, by the order
+    -->
+    <link href="images/apple-touch-icon-iphone-6-plus-precomposed.png" rel="apple-touch-icon-precomposed" sizes="180x180" /><!-- For iPhone 6 Plus with @3x display -->
+    <link href="images/apple-touch-icon-ipad-retina-precomposed.png" rel="apple-touch-icon-precomposed" sizes="152x152" /><!-- For iPad with @2x display running iOS ≥ 7 -->
+    <link href="images/apple-touch-icon-ipad-retina-old-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" /><!-- For iPad with @2x display running iOS ≤ 6 -->
+    <link href="images/apple-touch-icon-iphone-retina-precomposed.png" rel="apple-touch-icon-precomposed" sizes="120x120" /><!-- For iPhone with @2x display running iOS ≥ 7 -->
+    <link href="images/apple-touch-icon-iphone-retina-old-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" /><!-- For iPhone with @2x display running iOS ≤ 6 -->
+    <link href="images/apple-touch-icon-ipad-precomposed.png" rel="apple-touch-icon-precomposed" sizes="76x76" /><!-- For the iPad mini and the first- and second-generation iPad (@1x display) on iOS ≥ 7 -->
+    <link href="images/apple-touch-icon-ipad-old-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" /><!-- For the iPad mini and the first- and second-generation iPad (@1x display) on iOS ≤ 6 -->
+    <link href="images/apple-touch-icon-iphone-precomposed.png" rel="apple-touch-icon-precomposed" /><!-- 57x57px --><!-- For non-Retina (@1x display) iPhone, iPod Touch, and Android 2.1+ devices -->
     
     <!-- IOS WEB APP -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Página do Site">
-    <link rel="apple-touch-startup-image" href="/images/splash.png" />
+    <link href="images/splash.png" rel="apple-touch-startup-image" />
 
     <!-- ANDROID WEB APP 
         *-- Add to homescreen for Chrome on Android 
     -->
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link href="touch-icon-192x192.png" rel="icon" sizes="192x192" /><!-- For Chrome for Android -->
 
     <!-- WINDOWS PHONE
         *-- Tile icon for Win8 (144x144 + tile color)
      -->
-    <meta name="msapplication-TileImage" content="http://www.site.com.br/images/title.png" />
+    <meta name="msapplication-TileImage" content="images/tile.png" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta http-equiv="cleartype" content="on"> <!-- tecnologia cleartype -->
+    <meta http-equiv="cleartype" content="on" /> <!-- tecnologia cleartype -->
 
     <!-- FAVICON -->
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
@@ -78,7 +85,7 @@
     <!-- FORMAT DETECTION
         *-- desativa a deteccao automatica nos smartphones 
     -->
-    <meta name="format-detection" content="telephone=no,address=no,email=no"/> 
+    <!--<meta name="format-detection" content="telephone=no,address=no,email=no"/>--> 
 
     <!-- CSS BOOTSTRAP3 -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
@@ -104,11 +111,18 @@
     </script>
 </head>
 <body>
-    <div>
-        <h1>Título da página</h1>
-        <h2>título nível 2</h2>
-        <p>Texto de teste para ver como a fonte fica.</p>
-    </div>
+    <main>
+        <header>
+            <h1>Título da página</h1>
+            <h2>título nível 2</h2>
+        </header>
+        <section>
+            <article>
+                <p>Texto de teste para ver como a fonte fica.</p>
+                <p>Content Type: <span id="content-type"></span></p>
+            </article>
+        </section>
+    </main>
     
     <!-- SCRIPTS PLUGINS -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
