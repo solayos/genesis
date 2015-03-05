@@ -1,0 +1,28 @@
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section { display: block; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+body{ font-size: 19px; }
+ol, ul { list-style: none; }
+
+/* FAIXA DE 320 - 480 (Smartphone) */
+@media only screen and (max-width: 480px) {
+	
+}
+
+/* FAIXA DE 480 - 768 (Phablet) */
+@media only screen and (max-width: 768px) {
+	
+}
+
+/* FAIXA DE 768 - 1024 (Tablet) */
+@media only screen and (max-width: 1024px) {
+	
+}
+
+/* FAIXA DE 1024 - 1920 (Desktop) */
+@media only screen and (min-width: 1024px) {
+	
+}
