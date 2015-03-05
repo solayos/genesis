@@ -25,7 +25,7 @@
 })();
 
 $(function () {
-
+    $('[data-toggle="popover"]').popover({delay: { 'show': 200, 'hide': 1000 }});
     /* BASE URL VIA DEVICE PIXEL RATIO - ANDROID */
     //var baseUrl = 'file:///android_asset/www/img-js-diff/ratiores/'+getDensityDirectoryName()+'/'
     //document.write('<base href="' + baseUrl + '">');

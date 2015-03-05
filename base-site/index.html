@@ -116,31 +116,83 @@
                 <p>Content Type: <span id="content-type"></span></p>
             </article>
             <article>
-                <p>Assets -- Reference -- Resources</p>
-                <p><strong>"Assets"</strong><br>
-                <em>This stores all project files that aren’t deliverables – it’s also common to see it named "Resources" or "Reference" but I like the name "Assets".</em></p>
+                <h1>Estrutura padrão para sites</h1>
+                <h2>Estrutura principal</h2>
                 <ul>
-                    <li><strong>"_Old"</strong>: I go into more detail about this later on but basically this folder is where you store all the old and backup versions of your files. It starts with an underscore to always keep it at the top of the folder.</li>
-                    <li><strong>"Design"</strong>: Keep all your design source files here, like PSDs, Illustrator files, etc. I’m including a 960 grid PSD I created which I use as a starting template for a lot of web design projects. Learn more about <a href="http://960.gs/" onclick="javascript:pageTracker._trackPageview('/outbound/article/960.gs');">the 960 grid system here</a>.</li>
-                    <li><strong>"Notes.txt"</strong>: I like to keep all the project specs together in one central location. One tip I like to do is when I have a client email with important project information in it, I paste it into this text file. This keeps me from having to go back to my email and dig though everything every time I need to look stuff up about what the client said. Also keeps me from constantly checking my email which is a huge distraction and time waster.</li>
-                    <li><strong>"Zip"</strong>: For most projects I’ll have a few ZIP files that the client sends over – after I unzip them I store all the original ZIPs here in case I need to revert back to them.</li>
+                    <li>fonts</li>
+                    <li>includes</li>
+                    <li>resources
+                        <ul>
+                            <li>css
+                                <ul>
+                                    <li>style.css</li>
+                                </ul>
+                            </li>
+                            <li>data
+                                <ul>
+                                    <li>estrutura.json</li>
+                                </ul>
+                            </li>
+                            <li>images
+                                <ul>
+                                    <li>favicon.ico</li>
+                                </ul>
+                            </li>
+                            <li>js
+                                <ul>
+                                    <li>script.js</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>vendors
+                        <ul>
+                            <li>bootstrap
+                                <ul>
+                                    <li>css
+                                        <ul>
+                                            <li>bootstrap.min.css</li>
+                                        </ul>
+                                    </li>
+                                    <li>js
+                                        <ul>
+                                            <li>bootstrap.min.css</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>html5
+                                <ul>
+                                    <li>html5shiv.min.js</li>
+                                    <li>respond.min.js</li>
+                                </ul>
+                            </li>
+                            <li><span data-trigger="hover" data-toggle="popover" title="jQuery" data-content="Biblioteca jQuery">jquery</span>
+                                <ul>
+                                    <li>validate
+                                        <ul>
+                                            <li>jquery.maskedinput.min.js</li>
+                                            <li>jquery.validate.methods.min.js</li>
+                                            <li>jquery.validate.min.js</li>
+                                            <li>jquery.validate.pt-br.js</li>
+                                        </ul>
+                                    </li>
+                                    <li><span data-trigger="hover" data-toggle="popover" title="jQuery" data-content="Sem o número de versão para facilitar atualização. Esse deve estar dentro do arquivo js.">jquery.min.js</span></li>
+                                </ul>
+                            </li>
+                            <li><span data-trigger="hover" data-toggle="popover" title="js" data-content="Conteúdos que não tem biblioteca com dependências">js</span>
+                                <ul>
+                                    <li>progress-polyfill.min.js</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>zip</li>
+                    <li>index.html</li>
                 </ul>
-                <p><strong>"deploy"</strong><br>
-                <em>This is for all files that will be uploaded to the web server for the final project. It’s also common to have it named "bin", "web" or "deliverables". I prefer the name "deploy" since the name is more clear as to what exactly it’s for. Also notice how everything in here is named with all lowercase letters which is standard for all files deployed to the web.</em></p>
-                <ul>
-                    <li><strong>"css"</strong>: All CSS files go here.</li>
-                    <li><strong>"img"</strong>: For all your images. It’s also common for it to be named "images" but I like the 3-letter version better since it is more consistent with the rest of these names.</li>
-                    <li><strong>"inc"</strong>: All include files go here – mostly for doing dynamic/PHP websites.</li>
-                    <li><strong>"index.html"</strong>: This is the root file for the project.</li>
-                    <li><strong>"js"</strong>: All JavaScript files go here. The "swfobject.js" file here is the industry standard for inserting Flash into HTML pages.</li>
-                    <li><strong>"project_template.swf"</strong>: A sample SWF file that is embedded in "index.html".</li>
-                    <li><strong>"xml"</strong>: All XML files go here.</li>
-                </ul>
-                <p><strong>"src"</strong><br>
-                <em>All project source files go here, which for me is typically FLA and ActionScript classes. I set the FLAs to publish to the "deploy" folder to keep everything separated and organized. I’m still amazed at how many developers I see who still keep everything in the same folder then have to move/rename things once they are ready to upload. If you keep your "deploy" and "src" folders separated you’ll never have to move or rename things again.</em></p>
-                <ul>
-                    <li><strong>"project_template.fla"</strong>: A sample FLA set to publish to the "deploy" folder.</li>
-                </ul>
+                <h2>Estrutura alternativa</h2>
+                <p>assets || reference || resources</p>
+                <p>deploy || bin || web || deliverables</p>
             </article>
         </section>
         <section>
@@ -150,7 +202,7 @@
     
     <!-- SCRIPTS PLUGINS -->
     <script type="text/javascript" src="vendors/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="vendors/bootstrap/css/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendors/bootstrap/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
     	  {lang: "pt-BR"}
