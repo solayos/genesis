@@ -80,3 +80,52 @@ function updateOrientation(){
 	document.getElementsByTagName('body')[0].className = contentType;
 	document.getElementById('content-type').innerHTML = contentType;
 } 
+
+//FUNCOES DE COMPARTILHAMENTO
+/* Compartilhar Facebook */
+function compFacebook() {
+    var linkFacebook = 'http://www.facebook.com/sharer/sharer.php?u=';
+    montaLink(linkFacebook);
+}
+
+/* Compartilhar Twitter */
+function compTwitter() {
+    var linkTwitter = 'https://twitter.com/intent/tweet?original_referer=';
+    montaLink(linkTwitter);
+}
+
+/* Compartilha o link */
+function montaLink(linkPadrao) {
+    //caminho da pagina atual
+    var localAtual = window.location;
+
+    //codifica como URLEncode o link da pagina atual
+    var linkCodificadoURL = encodeURIComponent(localAtual);
+
+    //monta o link que sera compartilhado
+    var linkFinal = linkPadrao + linkCodificadoURL;
+
+    //abre uma janela/aba com o Facebook Share
+    window.open(linkFinal);
+
+    /*Substitui a pagina atual pela de compartilhamento
+    window.location.replace(linkFinal);
+    */
+}
+
+function addBookmark() {
+	// url do site
+	var url = window.location;
+	// titulo da pagina
+	var title = (document.getElementsByTagName('title').value = document.title);
+
+    /*if(window.sidebar) { 
+        window.sidebar.addPanel(title, url, ''); // Firefox 2- 
+	} else */
+    if ($.browser.msie == true) {
+		window.external.AddFavorite(url, title); // IE 7+
+    }
+    else {
+        alert('Pressione as teclas CTRL + D para adicionar aos favoritos.'); // Chrome, Safari, Firefox 8+, Opera 15+
+	}
+}
