@@ -1,5 +1,5 @@
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+main, article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section { display: block; }
 
 table { border-collapse: collapse; border-spacing: 0; }
@@ -25,4 +25,31 @@ ol, ul { list-style: none; }
 /* FAIXA DE 1024 - 1920 (Desktop) */
 @media only screen and (min-width: 1024px) {
 	
+}
+
+/* WINDOWS PHONE/ ANDROID */
+@media only screen and (min-resolution: 1dppx), (min-resolution: 160dpi), 
+    (-webkit-device-pixel-ratio: 1) {
+    .imagem { background-image: url('../images/mdpi.png'); }
+}
+@media only screen and (min-resolution: 1.5dppx), (min-resolution: 240dpi), 
+    (-webkit-device-pixel-ratio: 1.5) {
+    .imagem { background-image: url('../images/hdpi.png'); }
+}
+@media only screen and (min-resolution: 2dppx), (min-resolution: 320dpi), 
+    (-webkit-device-pixel-ratio: 2) {
+    .imagem { background-image: url('../images/xhdpi.png'); }
+}
+@media only screen and (min-resolution: 3dppx), (min-resolution: 480dpi), 
+    (-webkit-device-pixel-ratio: 3) {
+    .imagem { background-image: url('../images/xxhdpi.png'); }
+}
+@media only screen and (min-resolution: 4dppx), (min-resolution: 640dpi), 
+    (-webkit-device-pixel-ratio: 4) {
+    .imagem { background-image: url('../images/xxxhdpi.png'); }
+}
+
+/* ORIENTACAO */
+@media screen and (orientation:landscape) {
+    
 }

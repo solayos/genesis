@@ -4,11 +4,17 @@
     <meta charset="utf-8" />
     <title>Site</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="revisit-after" content="14 days" />
+    <!-- MOBILE VIEWPORT OPTIMIZATION -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="HandheldFriendly" content="true" /><!-- feature phone (PALM/Blackberry) -->
+    <meta name="MobileOptimized" content="320" /><!-- MS feature phone -->
+
     <!--<base href="http://www.site.com.br/" />--><!-- usada quando o site está em produção, para garantia de urls relativas -->
+    
+    <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page -->
     <link rel="canonical" href="http://www.site.com.br/" />
     
     <!-- GOOGLE PLUS -->
@@ -47,13 +53,32 @@
     <link rel="apple-touch-icon" sizes="72x72" href="//site.com.br/images/apple-touch-icon-72x72.png" />
     <link rel="apple-touch-icon" href="//site.com.br/images/apple-touch-icon.png" />
     
-    <!-- WINDOWS PHONE ICON -->
+    <!-- IOS WEB APP -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Página do Site">
+    <link rel="apple-touch-startup-image" href="/images/splash.png" />
+
+    <!-- ANDROID WEB APP 
+        *-- Add to homescreen for Chrome on Android 
+    -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- WINDOWS PHONE
+        *-- Tile icon for Win8 (144x144 + tile color)
+     -->
     <meta name="msapplication-TileImage" content="http://www.site.com.br/images/title.png" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta http-equiv="cleartype" content="on"> <!-- tecnologia cleartype -->
 
     <!-- FAVICON -->
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
     <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- FORMAT DETECTION
+        *-- desativa a deteccao automatica nos smartphones 
+    -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no"/> 
 
     <!-- CSS BOOTSTRAP3 -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
