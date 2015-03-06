@@ -67,7 +67,7 @@
 
     <!-- ANDROID WEB APP *-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes" />
-    <link href="resources/images/touch-icon-192x192.png" rel="icon" sizes="192x192" /><!-- For Chrome for Android -->
+    <link href="resources/images/touch-icon-android.png" rel="icon" sizes="192x192" /><!-- For Chrome for Android -->
 
     <!-- WINDOWS PHONE *-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="resources/images/tile.png" />
@@ -83,6 +83,9 @@
 
     <!-- CSS BOOTSTRAP3 -->
     <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <!-- CSS PLUGINS -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
 
     <!-- CSS GERAL -->
     <link href="resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -104,106 +107,171 @@
         ga('send', 'pageview');*/
     </script>
 </head>
-<body>
-    <main>
-        <header>
-            <h1>Título da página</h1>
-            <h2>título nível 2</h2>
-        </header>
-        <section>
-            <article>
-                <p>Texto de teste para ver como a fonte fica.</p>
-                <p>Content Type: <span id="content-type"></span></p>
-            </article>
-            <article>
-                <h1>Estrutura padrão para sites</h1>
-                <h2>Estrutura principal</h2>
-                <ul>
-                    <li>fonts</li>
-                    <li>includes</li>
-                    <li>resources
-                        <ul>
-                            <li>css
-                                <ul>
-                                    <li>style.css</li>
-                                </ul>
-                            </li>
-                            <li>data
-                                <ul>
-                                    <li>estrutura.json</li>
-                                </ul>
-                            </li>
-                            <li>images
-                                <ul>
-                                    <li>favicon.ico</li>
-                                </ul>
-                            </li>
-                            <li>js
-                                <ul>
-                                    <li>script.js</li>
-                                </ul>
-                            </li>
-                        </ul>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-f">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Site Template</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-collapse-f">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
                     </li>
-                    <li>vendors
-                        <ul>
-                            <li>bootstrap
-                                <ul>
-                                    <li>css
-                                        <ul>
-                                            <li>bootstrap.min.css</li>
-                                        </ul>
-                                    </li>
-                                    <li>js
-                                        <ul>
-                                            <li>bootstrap.min.js</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><span data-trigger="hover" data-toggle="popover" title="HTML5 Shiv" data-content="Polyfill para funcionalidades de HTML lte IE8">html5</span>
-                                <ul>
-                                    <li><span data-trigger="hover" data-toggle="popover" title="HTML5 Shiv" data-content="Polyfill para tags HTML5">html5shiv.min.js</span></li>
-                                    <li><span data-trigger="hover" data-toggle="popover" title="HTML5 Shiv" data-content="Polyfill para media queries">respond.min.js</span></li>
-                                    <li><span data-trigger="hover" data-toggle="popover" title="HTML5 Shiv" data-content="Polyfill para REM (relativo ao tamanho da fonte do elemento root - body)">rem.min.js</span></li>
-                                </ul>
-                            </li>
-                            <li><span data-trigger="hover" data-toggle="popover" title="jQuery" data-content="Biblioteca jQuery">jquery</span>
-                                <ul>
-                                    <li>validate
-                                        <ul>
-                                            <li>jquery.maskedinput.min.js</li>
-                                            <li>jquery.validate.methods.min.js</li>
-                                            <li>jquery.validate.min.js</li>
-                                            <li>jquery.validate.pt-br.js</li>
-                                        </ul>
-                                    </li>
-                                    <li><span data-trigger="hover" data-toggle="popover" title="jQuery" data-content="Sem o número de versão para facilitar atualização. Esse deve estar dentro do arquivo js.">jquery.min.js</span></li>
-                                </ul>
-                            </li>
-                            <li><span data-trigger="hover" data-toggle="popover" title="js" data-content="Conteúdos que não tem biblioteca com dependências">js</span>
-                                <ul>
-                                    <li><span data-trigger="hover" data-toggle="popover" title="Progress Polyfill" data-content="Polyfill para a tag progress em navegadores legados lte9">progress-polyfill.min.js</span></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <li>
+                        <a class="page-scroll" href="#intro">intro</a>
                     </li>
-                    <li>zip</li>
-                    <li>index.html</li>
+                    <li>
+                        <a class="page-scroll" href="#estrutura">estrutura</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#pessoas">pessoas</a>
+                    </li>
                 </ul>
-                <h2>Estrutura alternativa</h2>
-                <p>assets || reference || resources</p>
-                <p>deploy || bin || web || deliverables</p>
-            </article>
-        </section>
-        <section>
-            <!--<div class="embed-container" id="map-canvas"></div>-->
-        </section>
-    </main>
+            </div>
+        </div>
+    </nav>
+    <section id="intro" class="section">
+        <div class="container">
+            <div class="row">
+                <article class="col-lg-12">
+                    <p>Texto de teste para ver como a fonte fica.</p>
+                    <p>Orientação: <span id="my-orientation"></span></p>
+                    <a class="btn btn-default page-scroll fa fa-chevron-down fa-2x" href="#estrutura"></a>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section id="estrutura" class="section">
+        <div class="container">
+            <div class="row">
+                <article class="col-lg-12">
+                    <h1>Estrutura padrão para sites</h1>
+                    <h2>Estrutura principal</h2>
+                    <ul class="lista-estrutura lista">
+                        <li><span data-trigger="hover" data-toggle="popover" title="fonts" data-content="Fontes (tipografias) utilizadas no projeto.">fonts</span></li>
+                        <li><span data-trigger="hover" data-toggle="popover" title="includes" data-content="Módulos do projeto utilizados em mais de um local.">includes</span></li>
+                        <li><span data-trigger="hover" data-toggle="popover" title="resources" data-content="Recursos essenciais do projeto. Scripts, estilos, imagens, estruturas de dados e personalização que sobrescreve ou complemeta plugins. Pode também ser chamado de 'assets' ou 'reference'">resources</span>
+                            <ul>
+                                <li><span data-trigger="hover" data-toggle="popover" title="css" data-content="Folhas de estilo do site. Pode ser divido por temas, estrutura e áreas do projeto.">css</span>
+                                    <ul>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Style.css" data-content="Principal folha de estilo do projeto.">style.css</span></li>
+                                    </ul>
+                                </li>
+                                <li><span data-trigger="hover" data-toggle="popover" title="data" data-content="Estruturas de dados, XML, JSON, etc.">data</span>
+                                    <ul>
+                                        <li>estrutura.json</li>
+                                    </ul>
+                                </li>
+                                <li><span data-trigger="hover" data-toggle="popover" title="images" data-content="Imagens utilizadas no projeto.">images</span>
+                                    <ul>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="favicon" data-content="Imagem que fica no navegador, identificando o projeto na barra de favoritos.">favicon.ico</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Apple Touch Startup Image" data-content="Imagem utilizada pelo iOS como splash screen ao abrir o web app.">splash.png</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Apple Touch Icon (180x180)" data-content="Imagem utilizada pelo iPhone 6 Plus para criar ícone de web app. 'Precomposed' evita efeitos nos ícones em iOS antigo.">apple-touch-icon-iphone-6-plus-precomposed.png</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Apple Touch Icon (152x152)" data-content="Imagem utilizada pelo iPad Retina com iOS7 ou superior para criar ícone de web app. 'Precomposed' evita efeitos nos ícones em iOS antigo.">apple-touch-icon-ipad-retina-precomposed.png</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Apple Touch Icon (144x144) - Obsoleto" data-content="Imagem utilizada pelo iPad Retina com iOS6 ou inferior para criar ícone de web app. 'Precomposed' evita efeitos nos ícones em iOS antigo." class="depreceated-item">apple-touch-icon-ipad-retina-old-precomposed.png</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Apple Touch Icon (120x120)" data-content="Imagem utilizada pelo iPhone Retina com iOS7 ou superior para criar ícone de web app. 'Precomposed' evita efeitos nos ícones em iOS antigo.">apple-touch-icon-iphone-retina-precomposed.png</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Apple Touch Icon (114x114) - Obsoleto" data-content="Imagem utilizada pelo iPhone Retina com iOS6 ou inferior para criar ícone de web app. 'Precomposed' evita efeitos nos ícones em iOS antigo." class="depreceated-item">apple-touch-icon-iphone-retina-old-precomposed.png</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Apple Touch Icon (76x76)" data-content="Imagem utilizada pelo iPad com iOS7 ou superior para criar ícone de web app. 'Precomposed' evita efeitos nos ícones em iOS antigo.">apple-touch-icon-ipad-precomposed.png</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Apple Touch Icon (72x72) - Obsoleto" data-content="Imagem utilizada pelo iPad com iOS6 ou inferior para criar ícone de web app. 'Precomposed' evita efeitos nos ícones em iOS antigo." class="depreceated-item">apple-touch-icon-ipad-old-precomposed.png</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Apple Touch Icon (57x57)" data-content="Imagem utilizada pelo iPhone com iOS6 ou inferior para criar ícone de web app. 'Precomposed' evita efeitos nos ícones em iOS antigo.">apple-touch-icon-iphone-precomposed.png</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Android Touch Icon (192x192)" data-content="Imagem utilizada pelo Android para criar ícone de web app.">touch-icon-android.png</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="MS Application - Tile Image (144x144)" data-content="Imagem utilizada pelo Windows (Phone) 8 para criar tile na start screen.">tile.png</span></li>
+                                    </ul>
+                                </li>
+                                <li><span data-trigger="hover" data-toggle="popover" title="js (javascript)" data-content="Código javascript utilizado no projeto.">js</span>
+                                    <ul>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Script.js" data-content="Principais códigos utilizados no projeto.">script.js</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span data-trigger="hover" data-toggle="popover" title="vendors" data-content="Recursos de terceiros que fazem parte do projeto. Plugins, Frameworks, Bibliotecas de Código, etc.">vendors</span>
+                            <ul>
+                                <li><span data-trigger="hover" data-toggle="popover" title="Bootstrap" data-content="Framework para desenvolvimento de sites responsivos.">bootstrap</span>
+                                    <ul>
+                                        <li>css
+                                            <ul>
+                                                <li>bootstrap.min.css</li>
+                                            </ul>
+                                        </li>
+                                        <li>js
+                                            <ul>
+                                                <li>bootstrap.min.js</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><span data-trigger="hover" data-toggle="popover" title="HTML5 Shiv" data-content="Polyfill para funcionalidades de HTML5 (lte IE8).">html5</span>
+                                    <ul>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="HTML5 Shiv" data-content="Polyfill para tags HTML5.">html5shiv.min.js</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="HTML5 Shiv" data-content="Polyfill para media queries.">respond.min.js</span></li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="HTML5 Shiv" data-content="Polyfill para REM (relativo ao tamanho da fonte do elemento root - body).">rem.min.js</span></li>
+                                    </ul>
+                                </li>
+                                <li><span data-trigger="hover" data-toggle="popover" title="jQuery" data-content="Biblioteca de javascript">jquery</span>
+                                    <ul>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="jQuery Validate" data-content="Validações de formulários com a biblioteca jQuery.">validate</span>
+                                            <ul>
+                                                <li><span data-trigger="hover" data-toggle="popover" title="jQuery Masked Input" data-content="Máscaras para inputs de texto, ex.: telefone, CPF, CPNJ.">jquery.maskedinput.min.js</span></li>
+                                                <li><span data-trigger="hover" data-toggle="popover" title="jQuery Validate" data-content="Métodos principais de validação.">jquery.validate.min.js</span></li>
+                                                <li><span data-trigger="hover" data-toggle="popover" title="jQuery Validate" data-content="Métodos adicionais.">jquery.validate.methods.min.js</span></li>
+                                                <li><span data-trigger="hover" data-toggle="popover" title="jQuery Validate" data-content="Tradução das mensagens de erro.">jquery.validate.pt-br.js</span></li>
+                                            </ul>
+                                        </li>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="jQuery" data-content="Sem o número de versão para facilitar atualização. Esse deve estar dentro do arquivo js.">jquery.min.js</span></li>
+                                    </ul>
+                                </li>
+                                <li><span data-trigger="hover" data-toggle="popover" title="js" data-content="Conteúdos que não tem biblioteca com dependências.">js</span>
+                                    <ul>
+                                        <li><span data-trigger="hover" data-toggle="popover" title="Progress Polyfill" data-content="Polyfill para a tag progress em navegadores legados (lte IE9).">progress-polyfill.min.js</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span data-trigger="hover" data-toggle="popover" title="Pacotes ZIP" data-content="Pacotes do projeto enviados ao cliente (recomenda-se utilizar brances e tags de versionamento).">zip</span></li>
+                        <li>index.html</li>
+                    </ul>
+                    <h2>Estrutura alternativa</h2>
+                    <p>deploy || bin || web || deliverables</p>
+                    <a class="btn btn-default page-scroll fa fa-chevron-down fa-2x" href="#pessoas"></a>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section id="pessoas" class="section">
+        <div class="container">
+            <div class="row">
+                <article class="col-lg-12">
+                    <h2>Pessoas Chatas</h2>
+                    <ul class="json-import lista-pessoas lista"></ul>
+                    <!--<a class="btn btn-default page-scroll fa fa-chevron-down fa-2x" href="#mapa"></a>-->
+                </article>
+            </div>
+        </div>
+    </section>
+    <section id="mapa" class="section">
+        <div class="container">
+            <div class="row">
+                <article class="col-lg-12">
+                    <!--<div class="embed-container" id="map-canvas"></div>-->
+                </article>
+            </div>
+        </div>
+    </section>
     
     <!-- SCRIPTS PLUGINS -->
     <script type="text/javascript" src="vendors/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendors/jquery/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" src="vendors/jquery/jquery.easing.min.js"></script>
     <script type="text/javascript" src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendors/js/progress-polyfill.min.js"></script>
 
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
     	  {lang: "pt-BR"}
@@ -211,9 +279,6 @@
 
     <!-- SCRIPTS GERAIS -->
     <script type="text/javascript" src="resources/js/script.js"></script>
-
-    <!-- INTERACAO DE DADOS -->
-    <script type="text/javascript" src="resources/data/estrutura.json"></script>
 
     <!-- GOOGLE ADWORDS REMARKETING -->
     <!--<script type="text/javascript">

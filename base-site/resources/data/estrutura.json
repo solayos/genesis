@@ -1,16 +1,25 @@
 {
-    /*"name": "NodeSite",
-    "version": "0.0.1",
-    "author": "",
-    "description": "",
-    "contributors": [],
-    "main": "./server.js",
-    "keywords": [],
-    "dependencies": {},
-    "noAnalyze": true,
-    "engines": {
-        "node": ">=0.6"
-    },  
-    "devDependencies": {},
-    "optionalDependencies": {}*/
-}
+     "employees": 
+     [
+         {
+             "firstName": "Brendo",
+             "lastName": "Marinho",
+             "id": 1
+         },
+         {
+             "firstName": "Leandro",
+             "lastName": "Otani",
+             "id": 2
+         },
+         {
+             "firstName": "Michael",
+             "lastName": "Takehissa",
+             "id": 3
+         },
+         {
+             "firstName": "Angelo",
+             "lastName": "Sampaio",
+             "id": 4
+         }
+     ]
+ }
