@@ -1,7 +1,7 @@
 var larguraJanela = $(window).width(),
     alturaJanela = $(window).innerHeight(),
     urlSite = window.location.href,
-    ie;
+    ie = detectaIE();
 
 /* GOOGLE FONTS PT Sans */
 (function() {
@@ -29,7 +29,13 @@ var larguraJanela = $(window).width(),
     s.parentNode.insertBefore(link_element, s);
 })();
 
-$(window).bind('resize', function(e){
+/* EXECUTADO AO CARREGAR */
+window.onload = function initialLoad(){  
+	updateOrientation();
+}
+
+/* EXECUTADO AO REDIMENSIONAR JANELA */
+$(window).on('resize', function(event){
 	if (window.RT) clearTimeout(window.RT);
 	window.RT = setTimeout(function() {
 	    // code here
@@ -37,8 +43,11 @@ $(window).bind('resize', function(e){
 
 });
 
-//jQuery to collapse the navbar on scroll
+/* EXECUTADO NO SCROLL DA JANELA */
 $(window).scroll(function() {
+    var heightScroll = $(window).scrollTop();
+
+    //diminui tamanho do navbar
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {
@@ -46,12 +55,14 @@ $(window).scroll(function() {
     }
 });
 
+/* EXECUTADO AO GIRAR DISPOSITIVO */
 $(window).on('orientationchange', function (event) {
     updateOrientation();
 });
 
+/* EXECUTADO QUANDO DOCUMENTO ESTA PRONTO -- o mesmo que document.ready */
 $(function () {
-    $('a.page-scroll').bind('click', function(event) {
+    $('a.page-scroll').on('click', function (event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
@@ -59,48 +70,150 @@ $(function () {
         event.preventDefault();
     });
 
-    $(window).resize(function () {
-        // code here
-    });
-
-    var bind = function (el, event, fn) {
-        if (el.addEventListener) {
-            el.addEventListener(event, fn, false);
-        } else {
-            el.attachEvent('on' + event, fn);
-        }
-    };
+    //console.log(ie);
+    alert(meuNavegador());
 
     $('[data-toggle="popover"]').popover({ delay: { 'show': 200, 'hide': 200} });
+
     /* BASE URL VIA DEVICE PIXEL RATIO - ANDROID */
     //var baseUrl = 'file:///android_asset/www/img-js-diff/ratiores/'+getDensityDirectoryName()+'/'
     //document.write('<base href="' + baseUrl + '">');
 });
 
-/* ORIENTATION */
-window.onload = function initialLoad(){  
-	updateOrientation();
+function preventDefault(e) {
+    e = e || window.event;
+    if (e.preventDefault)
+        e.preventDefault();
+    e.returnValue = false;
 }
 
-var myOrientation = 'vertical';
+/* ADICIONA EVENTOS ATE jQuery 1.7, RECOMENDADO METODO ON */
+var bind = function (el, event, fn) {
+    if (el.addEventListener) {
+        el.addEventListener(event, fn, false);
+    } else {
+        el.attachEvent('on' + event, fn);
+    }
+};
 
+/* VERIFICA SE É DISPOSITIVO MÓVEL */
+function isGadget() {
+    return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase());
+}
+
+/* VERIFICA SE É ANDROID */
+function isAndroid() {
+    return /android/i.test(navigator.userAgent.toLowerCase());
+}
+
+/* VERIFICA NAVEGADOR */
+function meuNavegador(){
+    //var deviceAgent = navigator.userAgent.toLowerCase();
+    var ua = window.navigator.userAgent;
+    var versao = window.navigator.appVersion;
+    var navegador, nameOffset, verOffset, ix;
+
+    var versaoCompleta = '' + parseFloat(versao);
+    var versaoPrincipal = parseInt(versao, 10);
+
+    // In Opera, the true version is after "Opera" or after "Version"
+    if ((verOffset=ua.indexOf("Opera"))!=-1) {
+        navegador = "Opera";
+        versaoCompleta = ua.substring(verOffset + 6);
+        if ((verOffset = ua.indexOf("Version")) != -1)
+            versaoCompleta = ua.substring(verOffset + 8);
+    }
+    // In Chrome, the true version is after "Chrome" 
+    else if ((verOffset=ua.indexOf("Chrome"))!=-1) {
+        navegador = "Chrome";
+        versaoCompleta = ua.substring(verOffset + 7);
+    }
+    // In Safari, the true version is after "Safari" or after "Version" 
+    else if ((verOffset=ua.indexOf("Safari"))!=-1) {
+        navegador = "Safari";
+        versaoCompleta = ua.substring(verOffset + 7);
+        if ((verOffset = ua.indexOf("Version")) != -1)
+            versaoCompleta = ua.substring(verOffset + 8);
+    }
+    // In Firefox, the true version is after "Firefox" 
+    else if ((verOffset=ua.indexOf("Firefox"))!=-1) {
+        navegador = "Firefox";
+        versaoCompleta = ua.substring(verOffset + 8);
+    }
+    else{
+        detectaIE();
+    }
+    // In MSIE, the true version is after "MSIE" in userAgent
+    /*else if ((verOffset=ua.indexOf("MSIE"))!=-1) {
+        navegador = "Microsoft Internet Explorer";
+        versaoCompleta = ua.substring(verOffset+5);
+    }*/
+
+    // trim the versaoCompleta string at semicolon/space if present
+    if ((ix = versaoCompleta.indexOf(";")) != -1)
+        versaoCompleta = versaoCompleta.substring(0, ix);
+    if ((ix = versaoCompleta.indexOf(" ")) != -1)
+        versaoCompleta = versaoCompleta.substring(0, ix);
+
+    versaoPrincipal = parseInt('' + versaoCompleta, 10);
+    if (isNaN(versaoPrincipal)) {
+        versaoCompleta = '' + parseFloat(versao);
+        versaoPrincipal = parseInt(versao, 10);
+    }
+
+    return ['Navegador: ' + navegador + ' - Versão: ' + versaoCompleta];
+}
+
+/* VERIFICA VERSAO DO IE */
+function detectaIE() {
+    var ua = window.navigator.userAgent;
+
+    var msie = ua.indexOf('MSIE ');
+    if (msie > 0) {
+        // IE 10 or older => return version number
+        return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+    }
+
+    var trident = ua.indexOf('Trident/');
+    if (trident > 0) {
+        // IE 11 => return version number
+        var rv = ua.indexOf('rv:');
+        return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+    }
+
+    var edge = ua.indexOf('Edge/');
+    if (edge > 0) {
+       // IE 12 => return version number
+       return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+    }
+
+    /*
+        --STRINGS
+        Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0) //IE 10
+        Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko ) //IE 11
+        Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0 //IE 12
+    */
+
+    // other browser
+    return false;
+}
+
+/* ORIENTACAO DA PAGINA */
+var myOrientation = 'vertical';
 function updateOrientation(){
 	switch(window.orientation){  
 		case 0:  			
 			myOrientation = "vertical";  
-		break;  
-	
+		    break;  
 		case -90:			
 			myOrientation = "horizontal";  
-		break;  
-	
+		    break;  
 		case 90:
 			myOrientation = "horizontal";  
-		break;  
-	
+		    break;  
 		case 180:			
 			myOrientation = "vertical";  
-		break;  
+		    break;  
 	}
 
 	$('body').attr('data-orientation', myOrientation);
@@ -109,7 +222,7 @@ function updateOrientation(){
 	//document.getElementById('my-orientation').innerHTML = myOrientation;
 } 
 
-
+/* ESTRUTURAS DE DADOS */
 $.ajax({
     url: "resources/data/estrutura.json",
     dataType: "json",
@@ -124,15 +237,11 @@ $.ajax({
     }
 });
 
-
-
 /* MUDA DIRETORIO DAS IMAGENS E CONTEUDO 
     *-- Baseado no Device Pixel Ratio
  */
 function getDensityDirectoryName() {
-    if(!window.devicePixelRatio) {
-        return 'mdpi';
-    }
+    if(!window.devicePixelRatio) return 'mdpi';
     
     if(window.devicePixelRatio > 3) {
         return 'xxxhdpi';
@@ -147,20 +256,20 @@ function getDensityDirectoryName() {
     return 'mdpi';
 }
 
-//FUNCOES DE COMPARTILHAMENTO
-/* Compartilhar Facebook */
+/* FUNCOES DE COMPARTILHAMENTO */
+// Compartilhar Facebook
 function compFacebook() {
     var linkFacebook = 'http://www.facebook.com/sharer/sharer.php?u=';
     montaLink(linkFacebook);
 }
 
-/* Compartilhar Twitter */
+// Compartilhar Twitter
 function compTwitter() {
     var linkTwitter = 'https://twitter.com/intent/tweet?original_referer=';
     montaLink(linkTwitter);
 }
 
-/* Compartilha o link */
+// Compartilha o link
 function montaLink(linkPadrao) {
     //caminho da pagina atual
     var localAtual = window.location;
@@ -174,20 +283,18 @@ function montaLink(linkPadrao) {
     //abre uma janela/aba com o Facebook Share
     window.open(linkFinal);
 
-    /*Substitui a pagina atual pela de compartilhamento
+    /*substitui a pagina atual pela de compartilhamento
     window.location.replace(linkFinal);
     */
 }
 
+/* ADICIONAR AOS FAVORITOS */
 function addBookmark() {
 	// url do site
 	var url = window.location;
 	// titulo da pagina
 	var title = (document.getElementsByTagName('title').value = document.title);
 
-    /*if(window.sidebar) { 
-        window.sidebar.addPanel(title, url, ''); // Firefox 2- 
-	} else */
     if ($.browser.msie == true) {
 		window.external.AddFavorite(url, title); // IE 7+
     }
@@ -197,8 +304,6 @@ function addBookmark() {
 }
 
 /* @begin Plugin de Paginacao Slide */
-
-
 var isHome = true,
     isMobile = false,
     position = 0,
@@ -245,12 +350,6 @@ function animaSlideHome() {
         }
     }
 }
-function preventDefault(e) {
-    e = e || window.event;
-    if (e.preventDefault)
-        e.preventDefault();
-    e.returnValue = false;
-}
 
 function enterTop() {
     isScrolling = true;
@@ -276,11 +375,9 @@ function scrollContainer() {
     $(".containerSlide").addClass("scroll");
     newPosition = String(position) + "%";
 
-    $(".slidePage").each(
-        function () {
-            topo = $(this).css('top');
-        }
-    );
+    $(".slidePage").each(function () {
+        topo = $(this).css('top');
+    });
 
     $(".slidePage").css({ 'top': (topo - 20) + '%' });
 

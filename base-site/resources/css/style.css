@@ -2,15 +2,19 @@
 main, article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section { display: block; }
 
-table { border-collapse: collapse; border-spacing: 0; }
-
-body { width: 100%; height: 100%; -webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; transition: all 0.2s ease-out; -webkit-font-smoothing:antialiased; }
+body { width: 100%; height: 100%; -webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; transition: all 0.2s ease-out; -webkit-font-smoothing: antialiased; }
 html { width: 100%; height: 100%; }
 ol, ul { list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* BOOTSTRAP OVERHIDE */
+.navbar { max-height: 100px; }
 
 /* CLASSES */
 .depreceated-item { color: #f00; }
+.bgWhite { background-color: #fff; }
 
+/* LISTAS */
 .lista li:before { left: -3px; font-family: FontAwesome; position: relative; }
 
 .lista-estrutura li:before { content: "\f121"; }
@@ -19,7 +23,7 @@ ol, ul { list-style: none; }
 
 .lista-pessoas li:before { content: "\f007"; }
 
-.navbar { max-height: 100px; }
+/* CONTAINERS */
 .section { padding-top: 100px; }
 #intro { padding-top: 150px; }
 
@@ -108,28 +112,30 @@ progress[role]:after { content: ""; top: 0; right: 0; bottom: 0; left: 0; positi
 }
 
 /* WINDOWS PHONE/ ANDROID */
-@media only screen and (min-resolution: 1dppx), (min-resolution: 160dpi), 
-    (-webkit-device-pixel-ratio: 1) {
+@media only screen and (min-resolution: 1dppx), (min-resolution: 160dpi), (-webkit-device-pixel-ratio: 1) {
     .imagem { background-image: url('../images/mdpi.png'); }
 }
-@media only screen and (min-resolution: 1.5dppx), (min-resolution: 240dpi), 
-    (-webkit-device-pixel-ratio: 1.5) {
+@media only screen and (min-resolution: 1.5dppx), (min-resolution: 240dpi), (-webkit-device-pixel-ratio: 1.5) {
     .imagem { background-image: url('../images/hdpi.png'); }
 }
-@media only screen and (min-resolution: 2dppx), (min-resolution: 320dpi), 
-    (-webkit-device-pixel-ratio: 2) {
+@media only screen and (min-resolution: 2dppx), (min-resolution: 320dpi), (-webkit-device-pixel-ratio: 2) {
     .imagem { background-image: url('../images/xhdpi.png'); }
 }
-@media only screen and (min-resolution: 3dppx), (min-resolution: 480dpi), 
-    (-webkit-device-pixel-ratio: 3) {
+@media only screen and (min-resolution: 3dppx), (min-resolution: 480dpi), (-webkit-device-pixel-ratio: 3) {
     .imagem { background-image: url('../images/xxhdpi.png'); }
 }
-@media only screen and (min-resolution: 4dppx), (min-resolution: 640dpi), 
-    (-webkit-device-pixel-ratio: 4) {
+@media only screen and (min-resolution: 4dppx), (min-resolution: 640dpi), (-webkit-device-pixel-ratio: 4) {
     .imagem { background-image: url('../images/xxxhdpi.png'); }
 }
 
 /* ORIENTACAO */
 @media screen and (orientation:landscape) {
+    
+}
+@media screen and (orientation:portrait) {
+    
+}
+/* IMPRESSAO */
+@media print {
     
 }
