@@ -5,21 +5,6 @@
              "firstName": "Brendo",
              "lastName": "Marinho",
              "id": 1
-         },
-         {
-             "firstName": "Leandro",
-             "lastName": "Otani",
-             "id": 2
-         },
-         {
-             "firstName": "Michael",
-             "lastName": "Takehissa",
-             "id": 3
-         },
-         {
-             "firstName": "Angelo",
-             "lastName": "Sampaio",
-             "id": 4
          }
      ]
  }
