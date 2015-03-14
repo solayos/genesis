@@ -9,6 +9,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* BOOTSTRAP OVERHIDE */
 .navbar { max-height: 100px; }
+.logo { width: 200px; margin: 0 0 0 10px; float: right; }
 
 /* CLASSES */
 .depreceated-item { color: #f00; }
@@ -21,10 +22,11 @@ table { border-collapse: collapse; border-spacing: 0; }
 .lista-estrutura li li:before { content: "\f120"; }
 .lista-estrutura li li li:before { content: "\f149"; }
 
-.lista-pessoas li:before { content: "\f007"; }
+.lista-pessoas li { font-size: 16px; }
+.lista-pessoas li:before { content: "\f007"; left: -7px; font-size: 17px; position: relative; }
 
 /* CONTAINERS */
-.section { padding-top: 100px; }
+.section { padding: 100px 0; }
 #intro { padding-top: 150px; }
 
 /* CONTAINER DOS SLIDES */
@@ -36,7 +38,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 .slidePage3 { top: 50%; }
 .slidePage4 { top: 75%; } */
 
-.btnSobeDesce { width: 41px; height: 41px; right: 60px; background: url('../images/sprite-home.png'); cursor: pointer; position: fixed; float: right; z-index: 300; }
+.btnSobeDesce { width: 41px; height: 41px; right: 60px; /*background: url('../images/sprite-home.png');*/ cursor: pointer; position: fixed; float: right; z-index: 300; }
 .sobe { top: 185px; background-position:  0 -364px; }
 .desce { bottom: 35px; background-position:  0 -411px; }
 
@@ -113,19 +115,19 @@ progress[role]:after { content: ""; top: 0; right: 0; bottom: 0; left: 0; positi
 
 /* WINDOWS PHONE/ ANDROID */
 @media only screen and (min-resolution: 1dppx), (min-resolution: 160dpi), (-webkit-device-pixel-ratio: 1) {
-    .imagem { background-image: url('../images/mdpi.png'); }
+    .imagem { background-image: url('../images/android-touch-icon-mdpi.png'); } /*48x48*/
 }
 @media only screen and (min-resolution: 1.5dppx), (min-resolution: 240dpi), (-webkit-device-pixel-ratio: 1.5) {
-    .imagem { background-image: url('../images/hdpi.png'); }
+    .imagem { background-image: url('../images/android-touch-icon-hdpi.png'); } /*72x72*/
 }
 @media only screen and (min-resolution: 2dppx), (min-resolution: 320dpi), (-webkit-device-pixel-ratio: 2) {
-    .imagem { background-image: url('../images/xhdpi.png'); }
+    .imagem { background-image: url('../images/android-touch-icon-xhdpi.png'); } /*96x96*/
 }
 @media only screen and (min-resolution: 3dppx), (min-resolution: 480dpi), (-webkit-device-pixel-ratio: 3) {
-    .imagem { background-image: url('../images/xxhdpi.png'); }
+    .imagem { background-image: url('../images/android-touch-icon-xxhdpi.png'); } /*144x144*/
 }
 @media only screen and (min-resolution: 4dppx), (min-resolution: 640dpi), (-webkit-device-pixel-ratio: 4) {
-    .imagem { background-image: url('../images/xxxhdpi.png'); }
+    .imagem { background-image: url('../images/android-touch-icon-xxxhdpi.png'); } /*192x192*/
 }
 
 /* ORIENTACAO */

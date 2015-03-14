@@ -1,7 +1,7 @@
 var larguraJanela = $(window).width(),
     alturaJanela = $(window).innerHeight(),
     urlSite = window.location.href,
-    ie = detectaIE();
+    ie = versaoIE();
 
 /* GOOGLE FONTS PT Sans */
 (function() {
@@ -70,8 +70,8 @@ $(function () {
         event.preventDefault();
     });
 
-    //console.log(ie);
-    alert(meuNavegador());
+    console.log('IE ' + ie);
+    console.log(meuNavegador());
 
     $('[data-toggle="popover"]').popover({ delay: { 'show': 200, 'hide': 200} });
 
@@ -106,7 +106,12 @@ function isAndroid() {
     return /android/i.test(navigator.userAgent.toLowerCase());
 }
 
-/* VERIFICA NAVEGADOR */
+/* VERIFICA NAVEGADOR -- 
+    *-- STRINGS
+    Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0) //IE 10
+    Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko ) //IE 11
+    Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0 //IE 12
+*/
 function meuNavegador(){
     //var deviceAgent = navigator.userAgent.toLowerCase();
     var ua = window.navigator.userAgent;
@@ -140,14 +145,11 @@ function meuNavegador(){
         navegador = "Firefox";
         versaoCompleta = ua.substring(verOffset + 8);
     }
+    // In IE, the true version is after "MSIE" in userAgent
     else{
-        detectaIE();
+        navegador = "IE";
+        versaoCompleta = (versaoIE()).toString();
     }
-    // In MSIE, the true version is after "MSIE" in userAgent
-    /*else if ((verOffset=ua.indexOf("MSIE"))!=-1) {
-        navegador = "Microsoft Internet Explorer";
-        versaoCompleta = ua.substring(verOffset+5);
-    }*/
 
     // trim the versaoCompleta string at semicolon/space if present
     if ((ix = versaoCompleta.indexOf(";")) != -1)
@@ -161,11 +163,11 @@ function meuNavegador(){
         versaoPrincipal = parseInt(versao, 10);
     }
 
-    return ['Navegador: ' + navegador + ' - Versão: ' + versaoCompleta];
+    return ('Navegador: ' + navegador + ' - Versão: ' + versaoCompleta);
 }
 
 /* VERIFICA VERSAO DO IE */
-function detectaIE() {
+function versaoIE() {
     var ua = window.navigator.userAgent;
 
     var msie = ua.indexOf('MSIE ');
@@ -186,13 +188,6 @@ function detectaIE() {
        // IE 12 => return version number
        return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
     }
-
-    /*
-        --STRINGS
-        Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0) //IE 10
-        Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko ) //IE 11
-        Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0 //IE 12
-    */
 
     // other browser
     return false;
@@ -218,16 +213,13 @@ function updateOrientation(){
 
 	$('body').attr('data-orientation', myOrientation);
     $('#my-orientation').html(myOrientation);
-	//document.getElementsByTagName('body')[0].className = myOrientation;
-	//document.getElementById('my-orientation').innerHTML = myOrientation;
 } 
 
 /* ESTRUTURAS DE DADOS */
 $.ajax({
-    url: "resources/data/estrutura.json",
+    url: "./resources/data/estrutura.json",
     dataType: "json",
     success: function(data) {
-        //console.log(data);
         $.each(data.employees,function(i,emp){
             $('.json-import').append('<li>'+emp.firstName+' '+emp.lastName+'</li>');
         });
@@ -294,13 +286,15 @@ function addBookmark() {
 	var url = window.location;
 	// titulo da pagina
 	var title = (document.getElementsByTagName('title').value = document.title);
-
-    if ($.browser.msie == true) {
+    
+    if (ie) {
 		window.external.AddFavorite(url, title); // IE 7+
     }
     else {
         alert('Pressione as teclas CTRL + D para adicionar aos favoritos.'); // Chrome, Safari, Firefox 8+, Opera 15+
 	}
+
+    $('#addBookmark').removeClass('fa-star-o').addClass('fa-star');
 }
 
 /* @begin Plugin de Paginacao Slide */
