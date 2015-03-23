@@ -9,7 +9,7 @@ BASE DE ESTRUTURA PARA SITES
 <html lang="pt-BR" dir="ltr">
 <head>
     <meta charset="UTF-8" />
-    <title>Template Site</title>
+    <title>Base Site</title>
     <meta name="description" content="Modelo de site e estrutura responsiva e Social Friendly.">
     <?php include 'includes/header/header.php';  ?>
 
@@ -21,7 +21,7 @@ BASE DE ESTRUTURA PARA SITES
         <div class="container">
             <div class="row">
                 <article class="col-lg-12">
-                    <h1>Site Template</h1>
+                    <h1>Base Site</h1>
                     <p>Texto de teste para ver como a fonte fica.</p>
                     <p>Orientação: <span id="my-orientation"></span></p>
                     <a class="btn btn-default page-scroll fa fa-chevron-down fa-2x" href="#estrutura"></a>

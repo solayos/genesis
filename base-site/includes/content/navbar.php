@@ -10,7 +10,7 @@
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
                     <i class="fa fa-code fa-2x"></i>
-                    <img src="resources/images/logo.svg" alt="Site Template" class="logo" />
+                    <img src="resources/images/logo.svg" alt="Base Site" class="logo" />
                 </a>
             </div>
             <div class="collapse navbar-collapse navbar-collapse-f">
