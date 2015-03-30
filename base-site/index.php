@@ -1,9 +1,8 @@
 <?php
-/* 
-PROJECT TEMPLATE SITE 
-    
-BASE DE ESTRUTURA PARA SITES
-*/
+/** 
+@category: PROJECT TEMPLATE SITE 
+@package: BaseSite 
+**/
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
@@ -11,11 +10,11 @@ BASE DE ESTRUTURA PARA SITES
     <meta charset="UTF-8" />
     <title>Base Site</title>
     <meta name="description" content="Modelo de site e estrutura responsiva e Social Friendly.">
-    <?php include 'includes/header/header.php';  ?>
+    <?php require_once 'includes/header/header.php';  ?>
 
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-    <?php include 'includes/content/navbar.php';  ?>
+    <?php require_once 'includes/content/navbar.php';  ?>
         
     <section id="intro" class="section bgWhite">
         <div class="container">
@@ -197,9 +196,8 @@ BASE DE ESTRUTURA PARA SITES
         </div>
     </section>
 
-    <?php include 'includes/footer/scripts.php';  ?>
+    <?php require_once 'includes/footer/scripts.php';  ?>
 
-    <?php include 'includes/footer/google-adwords.php';  ?>
-
+    <?php include_once 'includes/footer/google-adwords.php';  ?>
 </body>
 </html>

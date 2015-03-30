@@ -48,10 +48,25 @@ $(window).scroll(function() {
     var heightScroll = $(window).scrollTop();
 
     //diminui tamanho do navbar
-    if ($(".navbar").offset().top > 50) {
+    /*if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    }*/
+
+    var scrollPage = $(window).scrollTop();
+    var widthJanela = $('body').innerWidth();
+
+    if (widthJanela > 1280) {
+        if (scrollPage > 0) {
+            $('.navbar-header').css('padding', '10px');
+            $('.navbar-brand').css('padding', '0'); // logo
+            $('.navbar-brand > img').css('width', '90px'); // logo
+        } else {
+            $('.navbar-header').css('padding', '0');
+            $('.navbar-brand').css('padding', '32px 17px 23px 17px'); // logo
+            $('.navbar-brand > img').css('width', 'auto'); // logo
+        }
     }
 });
 
