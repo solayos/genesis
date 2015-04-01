@@ -57,7 +57,7 @@ $(window).scroll(function() {
     var scrollPage = $(window).scrollTop();
     var widthJanela = $('body').innerWidth();
 
-    if (widthJanela > 1280) {
+    /*if (widthJanela > 1280) {
         if (scrollPage > 0) {
             $('.navbar-header').css('padding', '10px');
             $('.navbar-brand').css('padding', '0'); // logo
@@ -67,7 +67,7 @@ $(window).scroll(function() {
             $('.navbar-brand').css('padding', '32px 17px 23px 17px'); // logo
             $('.navbar-brand > img').css('width', 'auto'); // logo
         }
-    }
+    }*/
 });
 
 /* EXECUTADO AO GIRAR DISPOSITIVO */
