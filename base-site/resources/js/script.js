@@ -1,7 +1,10 @@
 var larguraJanela = $(window).width(),
     alturaJanela = $(window).innerHeight(),
     urlSite = window.location.href,
-    ie = versaoIE();
+    ie = versaoIE(),
+    containerPagina = $('.containerPagina'),
+    containerSubPagina = $('.containerSubPagina'),
+    menuAbas = $('.menuAbas ul li');
 
 /* GOOGLE FONTS PT Sans */
 (function() {
@@ -89,6 +92,10 @@ $(function () {
     console.log(meuNavegador());
 
     $('[data-toggle="popover"]').popover({ delay: { 'show': 200, 'hide': 200} });
+
+    /*$('.menuAba ul li').click(function () {
+        mostraAba($(this),$(this).index()+1);
+    });*/
 
     /* BASE URL VIA DEVICE PIXEL RATIO - ANDROID */
     //var baseUrl = 'file:///android_asset/www/img-js-diff/ratiores/'+getDensityDirectoryName()+'/'
@@ -261,6 +268,28 @@ function getDensityDirectoryName() {
     }
 
     return 'mdpi';
+}
+
+/* MOSTRA PAGINA/ABA */
+function mostraAba(menuAtual, paginaAtual) {
+    containerPagina.hide();
+    $('.containerPagina[data-pagina=' + paginaAtual + ']').show();
+
+    menuAbas.removeClass('active');
+    menuAtual.addClass('active');
+
+    var subAbas = $('.containerPagina[data-pagina=' + paginaAtual + ']').find('.txtAba');
+    mostraSubAba(subAbas, 1);
+}
+
+function mostraSubAba(submenuAtual, subPaginaAtual) {
+    if(submenuAtual.data('subpagina')){
+        containerSubPagina.hide();
+    }
+    else{
+        containerSubPagina.show();
+    }
+    $('.containerSubPagina[data-subpagina=' + subPaginaAtual + ']').show();
 }
 
 /* FUNCOES DE COMPARTILHAMENTO */
