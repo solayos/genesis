@@ -1,0 +1,4 @@
+*.db
+/nbproject/
+nbproject/private/private.xml
+*.svn
