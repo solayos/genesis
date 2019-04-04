@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Teste HTML</title>
+    <meta name="description" content="Prove os seus conhecimentos em HTML/CSS">
+
+    <meta http-equiv="Cache-Control" content="public, max-age=3600" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Teste HTML">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="theme-color" content="#B40000">
+
+    <link rel="prerender" href="/assets/styles/reset.css" as="style">
+    <link rel="prerender" href="/assets/styles/style.css" as="style">
+
+    <!-- FAVICON -->
+    <link type="image/x-icon" rel="icon" href="assets/app/favicon.ico"> <!-- Used by IE, and also by some other browsers if we are not careful -->
+    <link type="image/x-icon" rel="shortcut icon" href="assets/app/favicon.ico">
+
+    <!-- APPLE TOUCH ICON
+    - Older versions of Safari will not add effects for icon with the -precomposed.png suffix
+    -->
+    <link href="assets/app/apple-touch-icon-iphone-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="assets/app/apple-touch-icon-iphone-6-plus-precomposed.png" rel="apple-touch-icon" sizes="180x180"><!-- For iPhone 6 Plus with @3x display -->
+    <link href="assets/app/apple-touch-icon-ipad-retina-precomposed.png" rel="apple-touch-icon" sizes="152x152"><!-- For iPad with @2x display - iOS ≥ 7 -->
+    <link href="assets/app/apple-touch-icon-iphone-retina-precomposed.png" rel="apple-touch-icon" sizes="120x120"><!-- For iPhone with @2x display - iOS ≥ 7 -->
+    <link href="assets/app/apple-touch-icon-ipad-precomposed.png" rel="apple-touch-icon" sizes="76x76"><!-- For the iPad mini and the iPad with @1x display - iOS ≥ 7 -->
+    <link href="assets/app/apple-touch-icon-iphone-precomposed.png" rel="apple-touch-icon" sizes="60x60"><!-- For the iPhone with @1x display - iOS ≥ 7 -->
+
+    <!-- IOS WEB APP -->
+    <link href="assets/app/splash.png" rel="apple-touch-startup-image">
+    <link href="assets/app/safari-pinned-tab.svg" rel="mask-icon" color="#FFFFFF">
+
+    <!-- APP METADATA -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- STYLES -->
+    <link type="text/css" rel="stylesheet" media="all" href="assets/styles/reset.css">
+    <link type="text/css" rel="stylesheet" media="all" href="assets/styles/style.css">
+
+    <script>window.$ = window.jQuery = require('jquery');</script>
+
+    <script type="application/javascript" async>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+        }
+    </script>
+</head>
+<body>
+    <main class="collection">
+        <section id="content" class="slide">
+            <article class="container grid">
+                <header class="item item-header">
+                    <h1>Bem-vind@ ao Teste semântico</h1>
+                    <p>Você precisará fazer esse site, do zero, utilizando os conceitos a seguir:</p>
+                </header>
+                <section class="item item-main">
+                    <figure class="falling">
+                        <a href="javascript:void(0);" class="box"><img src="assets/images/falling-down.svg" alt="O que cai no teste?"></a>
+                    </figure>
+                    <h2 class="text-center">O que cai no teste?</h2>
+                    <p>Nesse teste você deverá mostrar os conhecimentos em HTML e CSS.</p>
+                    <p>Para isso, terá que fazer esse site (novamente) utilizando alguns conceitos que não são tão comuns.</p>
+                    <h3>Web Semântica</h3>
+                    <p>É importante sempre seguir as regras, não acha? Por isso, vamos começar utilizando as <em>&lt;tags&gt;</em> bonitinhas, como os tios da W3C propuseram.</p>
+                    <p>Esperamos que você utilize o que acreditar fazer mais sentido. Pode usar <em>&lt;p&gt;</em>, <em>&lt;em&gt;</em>, <em>&lt;section&gt;</em>, <em>&lt;aside&gt;</em> e até <em>&lt;div&gt;</em>, desde que faça sentido. E como vivemos em um mundo novo, <span class="tachado">sem IE</span>, vem a segunda parte.</p>
+                    <h3>Cuidado para não cair no <em>gap</em> <em id="typewrite-grid-1">do Grid</em></h3>
+                    <p>Primeiramente, <em class="fakelink" title="Te enganei! Aqui não tem link (smile face)">#ForaBootstrap</em>, segundamente, nem só de framework pronto viverá <strong>{o gênero aqui}</strong>.</p>
+                    <p class="typewriter-content">Como base para esse site que vos fala, utilizamos <em id="typewrite-grid-2">Grid</em> CSS, aquele mesmo, que funciona só nos <em>browsers</em> mais recentes!</p>
+                    <p><q>Mas, site, me explique: <em>Why</em>?</q> - você deve estar se perguntando... aí, agora vem a explicação no momento <em><a href="brendopedia/beakman.html" target="_blank" rel="noopener noreferrer" title="Agora, pode clicar, é link. Só tem um detalhe você não deve ter acesso internet =\">Beakman</a></em>.</p>
+                    <h3>O mundo é <strong>Responsivo</strong></h3>
+                    <p>Mais de 60% <sup>carece de fontes</sup> do acesso à internet vem de dispositivos móveis. Você mesmo deve ter ficado mexendo no seu enquanto aguardava para fazer o teste, seja ele um iPhone ou Android, (se for bem <em>hipster</em>, um Windows <span class="tachado">Fone</span>, não, pera, era Phone).</p>
+                    <p>Duvida? Tenta reduzir a largura do <span title="Ou o 'navegagor' que estiver utilizando">Chrome</span>... <span class="hidden-desktop">se você está no nosso <em>app</em>, basta girar o iPad.</span></p>
+                    <p>Agora que já brincou bastante, pode começar, você tem <strong>5 min</strong> para entregar!</p>
+                    <p>Calma, não precisa morrer de um ataque do miocárdio. Fique à vontade, tem o tempo que precisar, desde que não passe de 6h, afinal, tem a lei do estágio, né?!</p>
+                </section>
+                <aside class="item item-sidebar">
+                    <h2>Aqui fica nosso sidebar</h2>
+                    <a href="javascript:void(0);" class="box">
+                        <img src="assets/images/placeholder.svg" alt="Teste 01">
+                    </a>
+                    <a href="javascript:void(0);" class="box">
+                        <img src="assets/images/placeholder.svg" alt="Teste 02">
+                    </a>
+                    <a href="javascript:void(0);" class="box">
+                        <img src="assets/images/placeholder.svg" alt="Teste 03">
+                    </a>
+                    <a href="javascript:void(0);" class="box">
+                        <img src="assets/images/placeholder.svg" alt="Teste 04">
+                    </a>
+                </aside>
+                <footer class="item item-footer">
+                    <p><small>&copy; {currentDate} - Brendo Marinho <em>front-end</em>.</small></p>
+                </footer>
+            </article>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="assets/scripts/malarkey.js"></script>
+    <!--<script type="text/javascript" src="https://wzrd.in/standalone/malarkey@latest"></script>-->
+
+    <script type="text/javascript">
+        const typewriter1 = document.querySelector('#typewrite-grid-1'),
+              typewriter2 = document.querySelector('#typewrite-grid-2');
+
+        function callback1 (text) {
+            typewriter1.textContent = text;
+        }
+
+        function callback2 (text) {
+            typewriter2.textContent = text;
+        }
+
+        const options1 = {
+                typeSpeed: 50,
+                deleteSpeed: 50,
+                pauseDuration: 1650,
+                repeat: true
+            },
+              options2 = {
+                typeSpeed: 50,
+                deleteSpeed: 50,
+                pauseDuration: 2000,
+                repeat: true
+            };
+
+        malarkey(callback1, options1)
+            .type('do Grid').pause().delete()
+            .type('do Flexbox').pause().delete()
+            .type('das Media Queries').pause().delete();
+
+        malarkey(callback2, options2)
+            .type('Grid').pause().delete()
+            .type('Flexbox').pause().delete()
+            .type('Media Queries').pause().delete();
+
+    </script>
+</body>
+</html>
