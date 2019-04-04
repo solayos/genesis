@@ -1,0 +1,24 @@
+Bem-vind@ ao Teste semântico
+Você precisará fazer esse site, do zero, utilizando os conceitos a seguir:
+
+O que cai no teste?
+Nesse teste você deverá mostrar os conhecimentos em HTML e CSS.
+Para isso, terá que fazer esse site (novamente) utilizando alguns conceitos que não são tão comuns.
+
+Web Semântica
+É importante sempre seguir as regras, não acha? Por isso, vamos começar utilizando as <tags> bonitinhas, como os tios da W3C propuseram.
+Esperamos que você utilize o que acreditar fazer mais sentido. Pode usar <p>, <em>, <section>, <aside> e até <div>, desde que faça sentido. E como vivemos em um mundo novo, sem IE, vem a segunda parte.
+
+Cuidado para não cair no gap do Grid
+Primeiramente, #ForaBootstrap, segundamente, nem só de framework pronto viverá {o gênero aqui}.
+Como base para esse site que vos fala, utilizamos Grid CSS, aquele mesmo, que funciona só nos browsers mais recentes!
+Mas, site, me explique: Why? - você deve estar se perguntando... aí, agora vem a explicação no momento Beakman.
+
+O mundo é Responsivo
+Mais de 60% carece de fontes do acesso à internet vem de dispositivos móveis. Você mesmo deve ter ficado mexendo no seu enquanto aguardava para fazer o teste, seja ele um iPhone ou Android, (se for bem hipster, um Windows Fone, não, pera, era Phone).
+Duvida? Tenta reduzir a largura do Chrome...
+Agora que já brincou bastante, pode começar, você tem 5 min para entregar!
+Calma, não precisa morrer de um ataque do miocárdio. Fique à vontade, tem o tempo que precisar, desde que não passe de 6h, afinal, tem a lei do estágio, né?!
+
+{currentDate} - Brendo Marinho front-end.
+

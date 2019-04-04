@@ -1,0 +1,16 @@
+{
+    "name": "TestDrive",
+    "version": "0.0.1",
+    "description": "",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/brendonmm/genesis.git"
+    },
+    "devDependencies": {
+        "grunt": "^1.0.3",
+        "multi-glob": "^1.0.1"
+    }
+}

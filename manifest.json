@@ -1,0 +1,22 @@
+{
+    "name": "TestDrive - Prove o seu HTML",
+    "short_name": "TestDrive",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#FFFFFF",
+    "theme_color": "#B40000",
+    "icons": [
+        {
+            "src": "/assets/app/android-touch-icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/app/android-touch-icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
